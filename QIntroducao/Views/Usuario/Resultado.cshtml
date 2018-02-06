@@ -1,0 +1,49 @@
+﻿@model QIntroducao.Models.Usuario
+@{
+    ViewBag.Title = "Resultado Usuários";
+}
+
+<h2>Listar Dados Usuários</h2>
+
+<fieldset>
+
+    <legend>Usuário Cadastrado</legend>
+
+    <div class="form-group">
+        @Html.DisplayNameFor(x => x.Nome)
+        @Html.DisplayFor(x => x.Nome)
+    </div>
+
+    <div class="form-group">
+        @Html.DisplayNameFor(x => x.Observacoes)
+        @Html.DisplayFor(x => x.Observacoes)
+    </div>
+
+    <div class="form-group">
+        @Html.DisplayNameFor(x => x.Idade)
+        @Html.DisplayFor(x => x.Idade)
+    </div>
+
+    <div class="form-group">
+        @Html.DisplayNameFor(x => x.Email)
+        @Html.DisplayFor(x => x.Email)
+    </div>
+
+    <div class="form-group">
+        @Html.DisplayNameFor(x => x.Login)
+        @Html.DisplayFor(x => x.Login)
+    </div>
+
+    <div class="form-group">
+        @Html.DisplayNameFor(x => x.Senha)
+        @Html.DisplayFor(x => x.Senha)
+    </div>
+
+    <div class="form-group">
+        @Html.DisplayNameFor(x => x.ConfirmarSenha)
+        @Html.DisplayFor(x => x.ConfirmarSenha)
+    </div>
+
+    <p>@Html.ActionLink("Voltar", "Index", "Usuario")</p>
+
+</fieldset>

@@ -1,0 +1,76 @@
+﻿@model QIntroducao.Models.Usuario
+@{
+    ViewBag.Title = "Index - Usuário";
+}
+
+<h2>Validação de Usuários</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+
+        <legend>Dados do Usuário</legend>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Nome, new { @class = "col-md-1 control-label" })
+            <div class="col-sm-11">
+                @Html.EditorFor(x => x.Nome, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Nome, null, new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Observacoes, new { @class = "col-md-1 control-label" })
+            <div class="col-sm-11">
+                @Html.TextAreaFor(x => x.Observacoes, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Observacoes, null, new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Idade, new { @class = "col-md-1 control-label" })
+            <div class="col-sm-11">
+                @Html.EditorFor(x => x.Idade, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Idade, null, new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Email, new { @class = "col-md-1 control-label" })
+            <div class="col-sm-11">
+                @Html.EditorFor(x => x.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Email, null, new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Login, new { @class = "col-md-1 control-label" })
+            <div class="col-sm-11">
+                @Html.EditorFor(x => x.Login, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Login, null, new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.Senha, new { @class = "col-md-1 control-label" })
+            <div class="col-sm-11">
+                @Html.PasswordFor(x => x.Senha, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Senha, null, new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.ConfirmarSenha, new { @class = "col-md-1 control-label" })
+            <div class="col-sm-11">
+                @Html.PasswordFor(x => x.ConfirmarSenha, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.ConfirmarSenha, null, new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <p><input type="submit" value="Cadastrar" /></p>
+
+    </fieldset>
+
+    @section Scripts{@Scripts.Render("~/bundles/jqueryval");}
+}
